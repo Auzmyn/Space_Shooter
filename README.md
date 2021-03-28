@@ -1,4 +1,5 @@
-# Space_Shooter_V1
+# Alien Invasion V 1.0
+
 My first Space Shooter Game, build with the Python3 Crashcours
 
 V 1.0:
