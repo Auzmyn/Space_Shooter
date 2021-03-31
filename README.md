@@ -1,11 +1,11 @@
-# Alien Invasion V 1.0
+# Alien Invasion V 1.1
 
 My first Space Shooter Game, build with the Python3 Crashcours
 
-V 1.0:
+V 1.1:
 - working mechanics
-- limited players ship movement
+- players ship movement - being able to move ship over whole screen
+- included first sound effects for players ship
 
 TODO:
-- allow players ship to move across screen (needs: rebuild own ship)
-- add sound effects
+- add more sound effects
