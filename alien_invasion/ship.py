@@ -35,7 +35,7 @@ class Ship(Sprite):
             self.x += self.settings.ship_speed
         if self.moving_left and self.rect.left > self.screen_rect.left:
             self.x -= self.settings.ship_speed
-        if self.moving_up and self.rect.y > 600:
+        if self.moving_up and self.rect.y > self.screen_rect.top:
             self.y -= self.settings.ship_speed
         if self.moving_down and self.rect.y+50 < self.screen_rect.bottom:
             self.y += self.settings.ship_speed
@@ -47,6 +47,7 @@ class Ship(Sprite):
     def center_ship(self):
         """center the ship in the screen"""
         self.rect.midbottom = self.screen_rect.midbottom
+        self.y = self.settings.screen_height - 50
         self.x = float(self.rect.x)
 
     def blitme(self):

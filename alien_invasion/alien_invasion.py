@@ -5,6 +5,7 @@ import sys
 import pygame
 from time import sleep
 
+from FertigeProgramme.alien_invasion.sounds import Sound
 from settings import Settings
 from ship import Ship
 from bullet import Bullet
@@ -21,6 +22,7 @@ class AlienInvasion:
         """Inititalize the game, and greate game resources"""
         pygame.init()
         self.settings = Settings()
+        self.sound = Sound()
 
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
@@ -117,6 +119,7 @@ class AlienInvasion:
         if len(self.bullets) < self.settings.bullets_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
+            self.sound.laser_sound()
 
     def _update_bullets(self):
         """update the position of the bullets and get rid of old bullets"""
@@ -216,6 +219,7 @@ class AlienInvasion:
     def _ship_hit(self):
         """respond to the ship being hit by an alien"""
         # reduce the number of left over ships and updates score table
+        self.sound.ship_destroyed_sound()
         if self.stats.ships_left > 0:
             self.stats.ships_left -= 1
             self.sb.prep_ships()
